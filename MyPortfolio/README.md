@@ -1,17 +1,17 @@
-# README
+# README for My Portfolio web page
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version -> 2.5.0
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation -> Use postgresql as the database for Active Record
 
 * Database initialization
 
