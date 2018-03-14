@@ -1,5 +1,9 @@
 {
   "name": "MyPortfolio",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "popper.js": "^1.14.0",
+    "startbootstrap-agency": "^4.0.0-beta",
+    "startbootstrap-creative": "^4.0.0"
+  }
 }
