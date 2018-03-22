@@ -12,7 +12,8 @@ a {
 }
 
 a:hover {
-  color: #fec503
+  color: #d83232
+  /* color: #fec503 */
 }
 
 .text-primary {
@@ -31,7 +32,7 @@ section {
 section h2.section-heading {
   font-size: 40px;
   margin-top: 0;
-  margin-bottom: 15px
+  margin-bottom: 45px
 }
 
 section h3.section-subheading {
@@ -45,7 +46,7 @@ section h3.section-subheading {
 
 @media (min-width:768px) {
   section {
-    padding: 150px 0
+    padding: 90px 0
   }
 }
 
@@ -114,13 +115,13 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  color: #d83232;
+  color: #fff;
   /* color: #d83232; */
   font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: #e5b7b7
+  color: #d83232
   /* color: #fec503 */
 }
 
@@ -145,7 +146,8 @@ img::-moz-selection {
     -moz-transition: padding-top .3s, padding-bottom .3s;
     transition: padding-top .3s, padding-bottom .3s;
     border: none;
-    background-color: transparent
+    background-color: #212529
+    /* background-color: transparent */
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
@@ -571,26 +573,6 @@ header.masthead .intro-text .intro-heading {
   }
 }
 
-.team-member {
-  margin-bottom: 50px;
-  text-align: center
-}
-
-.team-member img {
-  width: 225px;
-  height: 225px;
-  border: 7px solid #fff
-}
-
-.team-member h4 {
-  margin-top: 25px;
-  margin-bottom: 0;
-  text-transform: none
-}
-
-.team-member p {
-  margin-top: 0
-}
 
 section#contact {
   background-color: #212529;
@@ -653,20 +635,6 @@ footer {
   text-align: center
 }
 
-footer span.copyright {
-  font-size: 90%;
-  line-height: 40px;
-  text-transform: none;
-  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
-}
-
-footer ul.quicklinks {
-  font-size: 90%;
-  line-height: 40px;
-  margin-bottom: 0;
-  text-transform: none;
-  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
-}
 
 ul.social-buttons {
   margin-bottom: 0

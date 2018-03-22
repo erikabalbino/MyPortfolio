@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+# Project.destroy_all
 
-User.create(
+u = User.create(
   first_name: "Liz",
   last_name: "Balbino",
   profile_title: "Graphic Design Student",
@@ -20,27 +21,26 @@ User.create(
   url_instagram: "http://instagram.com/mebalbino",
   image: "https://mir-s3-cdn-cf.behance.net/user/138/a6840c65646341.59346d236302e.jpg"
 )
-
-
-
-# 5.times.each do
-#   first_name = Faker::Name.first_name
-#   last_name = Faker::Name.last_name
-#
-#   u = User.create(
-#     first_name: first_name,
-#     last_name: last_name,
-#     profile_title: Faker::Company.profession,
-#     profile_company: Faker::Company.name,
-#     address: Faker::Lorem.paragraph,
-#     email: "#{first_name.downcase}.#{last_name.downcase}@example.com",
-#     focus: Faker::Company.buzzword,
-#     url_facebook: Faker::Internet.url,
-#     url_linkedin: Faker::Internet.url,
-#     url_instagram: Faker::Internet.url
-#   )
+# if u.valid?
+#   6.times.each do |i|
+#     p = Project.create(
+#       title: Faker::Dessert.variety,
+#       project_type: "example",
+#       description: Faker::Dessert.topping,
+#       user: u
+#     )
+#     puts p.errors.full_messages
+#     if p.valid?
+#       file = File.open(File.join(Rails.root, "app/assets/images/projects/0#{i + 1}-thumbnail.jpg"))
+#       p.thumbnail = file
+#       p.save
+#     end
+#   end
 # end
 
+
 users = User.all
+projects = Project.all
 
 puts Cowsay.say "Created #{users.count} users", :tux
+puts Cowsay.say "Created #{projects.count} projects", :frogs
