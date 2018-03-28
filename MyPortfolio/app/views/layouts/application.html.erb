@@ -28,6 +28,10 @@
     <!-- Custom styles for this template -->
     <link href="../assets/agency.min.css" rel="stylesheet">
 
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+
 
   </head>
 
@@ -37,7 +41,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="/">
-          <img src="./assets/flower.png" width="30" height="30" alt="">
+          <img src="/assets/flower.png" width="30" height="30" alt="">
           Liz Balbino</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -57,10 +61,48 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/#contact">Contact</a>
             </li>
+            <li class="nav-item">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger">Hello, <%= current_user.first_name %>!</a>
+                </li>
+                <!-- <a class="nav-link js-scroll-trigger" href="/session" method = "DELETE">Sign Out</a> -->
+                <li class="nav-item">
+                  <%= link_to 'Sign Out', session_path, method: :delete, class: "nav-link js-scroll-trigger" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'New Project', new_user_project_path(current_user.id), class: "nav-link js-scroll-trigger" %>
+                </li>
+              <% else %>
+                <a class="nav-link js-scroll-trigger" href="/session/new">Sign In</a>
+                <!-- <a class="nav-link js-scroll-trigger" href="/users/new">Sign Up</a> -->
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <%# <div class="container-fluid">%>
+    <div class="">
+      <% if flash[:notice].present? %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <%= flash[:notice] %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% elsif flash[:alert].present? %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= flash[:alert] %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+      <!-- <%= yield %> -->
+    </div>
 
     <%= yield %>
 

@@ -1,0 +1,16 @@
+
+
+<%= simple_form_for [@user, @project] do |f| %>
+
+  <% if @project.errors.present? %>
+    <p><%= @project.errors.full_messages.join(', ') %></p>
+  <% end %>
+
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :project_type %>
+  <%= f.input :thumbnail %>
+
+  <%= f.submit class: 'btn btn-primary' %>
+
+<% end %>

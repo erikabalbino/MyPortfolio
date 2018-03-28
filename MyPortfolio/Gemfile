@@ -37,6 +37,8 @@ gem 'bootstrap_form'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'simple_form'
+gem 'pry'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

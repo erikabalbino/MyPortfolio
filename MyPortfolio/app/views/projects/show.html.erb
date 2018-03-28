@@ -1,24 +1,64 @@
-<div class="" style="margin-top: 100px">
+<div class="container-project">
 
-  <h2> My Project : <%= @project.title %></h2>
-
-  <h3>Description: <%= @project.description %></h3>
-  <div>
-    <small>
-      Posted
-      <%= time_ago_in_words(@project.created_at) %>
-      ago
-    </small>
-    •
-    <small>
-      Last edited
-      <%= time_ago_in_words(@project.updated_at) %>
-      ago
-    </small>
-
-    <small>
-      By <%= @project.user.first_name %>
-    </small>
+  <div class="left">
+    <div class="">
+      My Project :<%= @project.title %>
+      Description:<%= @project.description %>
+      Project Type: Branding, Graphic Design and Web Design
+      Published 3 days ago • Last edited 2 days ago By Liz
+    </div>
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
+    <img src="<%= @project.thumbnail%>" />
   </div>
-  <img src="<%= @project.thumbnail%>">
+
+  <div class="sidebar">
+    <div class="right">
+      <%= @project.title %><br>
+      <%= @project.description %><p></p>
+      Project Type: <%= @project.project_type %><p></p>
+
+      Published 3 days ago • Last edited 2 days ago By Liz
+    </div>
+    <hr>
+
+    <div class="right">
+      My Project :<%= @project.title %>
+      My Project : EL SANTO
+      Description: Mexican Restaurant
+      Project Type: Branding, Graphic Design and Web Design
+      Published 3 days ago • Last edited 2 days ago By Liz
+    </div>
+    <hr>
+
+    <div class="right">
+      My Project : EL SANTO
+      Description: Mexican Restaurant
+      Project Type: Branding, Graphic Design and Web Design
+      Published 3 days ago • Last edited 2 days ago By Liz
+    </div>
+    <hr>
+
+  <% if user_signed_in? %>
+    <div >
+        <%= link_to 'Edit', edit_project_path(@project) %>
+    </div>
+
+    <div class="">
+      <%= link_to 'Delete',
+      project_path(@project),
+      method: :delete,
+      data: {
+        confirm: 'Are you sure?'
+      }
+      %>
+    </div>
+  <% end %>
+
+  </div>
 </div>

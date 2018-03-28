@@ -1,0 +1,13 @@
+
+<div class="" style="margin-top: 150px">
+  <h1>Sign In</h1>
+
+  <%= simple_form_for :session, url: session_path do |f| %>
+    <%= f.input :email, placeholder: 'email@domain.com' %>
+    <%= f.input :password, placeholder: 'Type your password' %>
+
+    <%= f.submit 'Submit' %>
+    <%# f.submit class: 'btn btn-primary', 'Submit' %>
+
+  <% end %>
+</div>

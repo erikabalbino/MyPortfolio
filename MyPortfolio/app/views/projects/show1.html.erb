@@ -1,0 +1,50 @@
+
+
+<div class="" style="margin-top: 100px">
+
+  <h2>
+    My Project :
+    <%= @project.title %></h2>
+
+  <h3>Description:
+    <%= @project.description %></h3>
+
+  <h3>Project Type:
+    <%= @project.project_type %></h3>
+
+  <div>
+    <small>
+      Published
+      <%= time_ago_in_words(@project.created_at) %>
+      ago
+    </small>
+    •
+    <small>
+      Last edited
+      <%= time_ago_in_words(@project.updated_at) %>
+      ago
+    </small>
+
+    <small>
+      By
+      <%= @project.user.first_name %>
+    </small>
+  </div>
+
+  <img src="<%= @project.thumbnail%>">
+
+</div>
+
+<%= link_to 'Edit', edit_project_path(@project) %>
+
+<%= link_to 'Delete',
+  project_path(@project),
+  method: :delete,
+  data: {
+    confirm: 'Are you sure?'
+  }
+%>
+<hr>
+<!-- ===========================
+
+ -->
