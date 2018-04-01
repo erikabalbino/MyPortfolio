@@ -50,6 +50,7 @@
   color: red;
 }
 
+
 /*===============================*/
 body {
   overflow-x: hidden;
@@ -164,6 +165,7 @@ img::-moz-selection {
   color: #fff;
   border: 0;
   background-color: #d83232;
+	border-color: #d83232;
   font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
 
@@ -238,7 +240,8 @@ header.masthead {
 header.masthead .intro-text {
   color: black;
   padding-top: 150px;
-  padding-bottom: 100px
+  padding-bottom: 100px;
+	height: 900px
 }
 
 header.masthead .intro-text .intro-lead-in {
@@ -296,7 +299,8 @@ header.masthead .intro-text .intro-heading {
   display: block;
   max-width: 400px;
   margin: 0 auto;
-  cursor: pointer
+  cursor: pointer;
+	color: black
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
@@ -307,7 +311,8 @@ header.masthead .intro-text .intro-heading {
   -moz-transition: all ease .5s;
   transition: all ease .5s;
   opacity: 0;
-  background: rgba(254, 209, 54, .9)
+  background: #d83232
+  /* background: rgba(254, 209, 54, .9) */
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {

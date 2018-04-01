@@ -1,64 +1,82 @@
 <div class="container-project">
 
   <div class="left">
+    <div class="" style="font-size: 20px">
+      <%= @project.description %><br>
+    </div> <p></p>
+
+    <% @images.each do |image| %>
+      <img src="<%= image.avatar %>" />
+      <% if user_signed_in? %>
+        <%= link_to 'Delete Image',
+          image_path(image),
+          method: :delete,
+          data: { confirm: 'Are you sure?' }
+        %>
+      <% end %>
+    <% end %>
+
     <div class="">
-      My Project :<%= @project.title %>
-      Description:<%= @project.description %>
-      Project Type: Branding, Graphic Design and Web Design
-      Published 3 days ago • Last edited 2 days ago By Liz
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/"
+        style="font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive"
+      >Close Project</a>
     </div>
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
-    <img src="<%= @project.thumbnail%>" />
+
   </div>
 
   <div class="sidebar">
     <div class="right">
-      <%= @project.title %><br>
-      <%= @project.description %><p></p>
-      Project Type: <%= @project.project_type %><p></p>
-
-      Published 3 days ago • Last edited 2 days ago By Liz
+      <div class="" style="text-align: center">
+        <img class="rounded-circle " src="../assets/Liz.jpg" style="width: 60px; height: 60px; margin-bottom: 10px;" />
+      </div>
+      <div class="" style="font-size: 20px; text-align: center; font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive">
+        LIZ BALBINO<p></p>
+      </div>
     </div>
     <hr>
 
     <div class="right">
-      My Project :<%= @project.title %>
-      My Project : EL SANTO
-      Description: Mexican Restaurant
-      Project Type: Branding, Graphic Design and Web Design
-      Published 3 days ago • Last edited 2 days ago By Liz
+      <big>
+        <%= @project.title %><p></p>
+      </big>
+      <%= @project.project_type %><p></p>
+
+      <small>
+        Published
+        <%= time_ago_in_words(@project.created_at) %>
+        ago
+      </small>
     </div>
     <hr>
 
     <div class="right">
-      My Project : EL SANTO
-      Description: Mexican Restaurant
-      Project Type: Branding, Graphic Design and Web Design
-      Published 3 days ago • Last edited 2 days ago By Liz
+      IMPLEMENT LIKE HERE !!!
     </div>
     <hr>
 
-  <% if user_signed_in? %>
-    <div >
-        <%= link_to 'Edit', edit_project_path(@project) %>
-    </div>
+    <% if user_signed_in? %>
+      <div >
+          <%= link_to 'Edit Project', edit_project_path(@project) %>
+      </div>
 
-    <div class="">
-      <%= link_to 'Delete',
-      project_path(@project),
-      method: :delete,
-      data: {
-        confirm: 'Are you sure?'
-      }
-      %>
-    </div>
-  <% end %>
+      <div class="">
+        <%= link_to 'Delete Project',
+        project_path(@project),
+        method: :delete,
+        data: {
+          confirm: 'Are you sure?'
+        }
+        %>
+      </div>
+
+      <div class="">
+        <%= simple_form_for [@project, @image] do |f| %>
+          <%= f.input :avatar %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+
+    <% end %>
 
   </div>
 </div>

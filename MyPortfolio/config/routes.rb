@@ -9,7 +9,13 @@ Rails.application.routes.draw do
       resources :projects, only: [:new, :create, :edit, :update, :show, :destroy]
   end
 
+  resources :projects, shallow: true do
+      resources :images, only: [:create, :destroy]
+  end
+
   # Users#index
   get('/', {to: 'users#index', as: :root})
+
+  post('/contact_me', to: 'users#contact_me')
 
 end

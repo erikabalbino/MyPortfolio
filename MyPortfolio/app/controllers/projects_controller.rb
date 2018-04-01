@@ -22,6 +22,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find params[:id]
+    @image = Image.new
+    @images = @project.images
   end
 
   def edit

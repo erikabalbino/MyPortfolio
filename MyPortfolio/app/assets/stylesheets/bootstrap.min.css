@@ -2354,7 +2354,12 @@ select.form-control:focus::-ms-value {
 }
 
 .btn:not(:disabled):not(.disabled) {
-  cursor: pointer
+  cursor: pointer;
+  background-color: #d83232;
+  border-color: #d83232
+  /* height: 60px;
+  width: 218px;
+  font-size: 21px */
 }
 
 .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
@@ -7020,6 +7025,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 }
 
 .fixed-top {
+  background-color: #212529;
   position: fixed;
   top: 0;
   right: 0;

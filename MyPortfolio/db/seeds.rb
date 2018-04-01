@@ -10,6 +10,7 @@ PASSWORD = 'supersecret'
 
 User.destroy_all
 Project.destroy_all
+Image.destroy_all
 
 # super_user = User.create(
 #   first_name: 'Jon',
@@ -49,10 +50,25 @@ if u.valid?
     end
   end
 end
+if p.valid?
+  6.times.each do |a|
+    i = Image.create(
+      project: p
+    )
+    puts i.errors.full_messages
+    if i.valid?
+      file = File.open(File.join(Rails.root, "app/assets/images/projects/0#{a + 1}-full-#{a}.jpg"))
+      i.image = file
+      i.save
+    end
+  end
+end
 
 
 users = User.all
 projects = Project.all
+images = Image.all
 
 puts Cowsay.say "Created #{users.count} users", :tux
 puts Cowsay.say "Created #{projects.count} projects", :frogs
+puts Cowsay.say "Created #{images.count} images", :frogs

@@ -1,0 +1,21 @@
+h1>Hello <%= @project_owner.full_name %></h1>
+
+<p>
+  You got a new contact about this project: <%= @project.title %>
+</p>
+
+<p>
+  The comment is:
+</p>
+
+<p>
+  ???????
+</p>
+
+<%= link_to(
+  'Click here to view your project',
+  project_url(@project)
+) %>
+
+<p>Cheers,</p>
+<p>Liz Balbino</p>
