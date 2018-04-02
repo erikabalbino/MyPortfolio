@@ -24,6 +24,7 @@ class ProjectsController < ApplicationController
     @project = Project.find params[:id]
     @image = Image.new
     @images = @project.images
+    # @like = @project.likes
   end
 
   def edit
@@ -53,7 +54,10 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :thumbnail, :project_type)
+    params.require(:project).permit(
+      :title, :description, :thumbnail,
+      :project_type, :project_client,
+      :thumbnail_title)
   end
 
 end

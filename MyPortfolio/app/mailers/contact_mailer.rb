@@ -4,7 +4,7 @@ class ContactMailer < ApplicationMailer
 
     mail(
       to: @project_owner.email,
-      subject: 'You got a new contact!'
+      subject: 'You got a new message from Liz Portfolio!'
     )
   end
 
@@ -16,7 +16,7 @@ class ContactMailer < ApplicationMailer
     mail(
       from: @email,
       to: "mecbalbino@gmail.com",
-      subject: 'You got a new contact!'
+      subject: 'You got a new message from Your Portfolio!'
     )
   end
 end

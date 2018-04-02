@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :projects, shallow: true do
       resources :images, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy]
   end
 
   # Users#index

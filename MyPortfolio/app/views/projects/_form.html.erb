@@ -6,9 +6,11 @@
     <p><%= @project.errors.full_messages.join(', ') %></p>
   <% end %>
 
+  <%= f.input :thumbnail_title %>
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :project_type %>
+  <%= f.input :project_client %>
   <%= f.input :thumbnail %>
 
   <%= f.submit class: 'btn btn-primary' %>

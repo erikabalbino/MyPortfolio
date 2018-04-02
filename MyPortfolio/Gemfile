@@ -39,7 +39,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'simple_form'
 gem 'pry'
-# gem "font-awesome-rails"
+gem "font-awesome-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
