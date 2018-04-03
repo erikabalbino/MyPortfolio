@@ -1,9 +1,10 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def create
     project = Project.find params[:project_id]
-    like = Like.new user: current_user, project: project
+    # like = Like.new user: current_user, project: project
+    like = Like.new project: project
     like.save
 
     redirect_to project_path(project), notice: 'Liked'
