@@ -7,7 +7,6 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory = 'lizportfolio' # AWS S3 Bucket Name
-  config.fog_public = false
   config.fog_attributes = {
     'Cache-Control' => "max-age=#{365.day.to_i}"
   }

@@ -1,9 +1,9 @@
-<div class="container-project">
+<div class="container-project" id="top_project">
 
   <div class="left">
 
     <div style="font-size: 50px; font-weight: 700; margin-bottom:20px;
-    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
       <%= @project.title %>
     </div>
 
@@ -13,22 +13,23 @@
 
     <div class="">
       <% @images.each do |image| %>
-        <img src="<%= image.avatar %>" /><p></p>
+        <img src="<%= image.avatar %>"/>
+        <p></p>
         <% if user_signed_in? %>
-          <%= link_to 'Delete Image',
-          image_path(image),
-          method: :delete,
-          data: { confirm: 'Are you sure?' }
-          %>
-        <% end %><p></p>
+          <%= link_to 'Delete Image', image_path(image), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <p></p>
       <% end %>
     </div>
 
     <div class="">
-      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/"
-      style="font-weight: 400;
-      font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;"
-      >Close Project</a>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/#portfolio" style="font-weight: 400;
+        font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Close Project</a>
+    </div>
+    <br>
+    <div class="">
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#top_project" style="font-weight: 400;
+        font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Top page</a>
     </div>
 
   </div>
@@ -36,7 +37,7 @@
   <div class="sidebar">
     <div class="right">
       <div class="" style="text-align: center">
-        <img class="rounded-circle " src="../assets/Liz.jpg" style="width: 60px; height: 60px; margin-bottom: 10px;" />
+        <img class="rounded-circle " src="../assets/Liz.jpg" style="width: 60px; height: 60px; margin-bottom: 10px;"/>
       </div>
       <div class="" style="font-size: 20px; text-align: center; font-weight: 400;
       font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
@@ -48,20 +49,22 @@
     <div class="right">
       <div style="font-size: 15px; font-weight: 600;
       font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-      Client:
+        Client:
       </div>
 
       <div style="font-size:15px; font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif;">
-      <%= @project.project_client %><p></p>
+        <%= @project.project_client %>
+        <p></p>
       </div>
 
       <div style="font-size: 15px; font-weight: 600;
       font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-      Categories:
+        Categories:
       </div>
 
       <div style="font-size:15px; font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif;">
-      <%= @project.project_type %><p></p>
+        <%= @project.project_type %>
+        <p></p>
       </div>
 
       <div style="font-size: 12px; font-weight: 400;
@@ -74,40 +77,29 @@
     <hr>
 
     <div class="right">
-      <div class="like-widget">
-        <% if @like.present? %>
-          <%= link_to fa_icon('thumbs-up 2x'), like_path(@like), method: :delete %>
-        <% else %>
-          <%= link_to fa_icon('thumbs-o-up 2x'), project_likes_path(@project), method: :post %>
-        <% end %>
-        <%= pluralize(@project.likes.count, 'like') %>
-      </div>
+      <%= link_to fa_icon('thumbs-o-up 2x'), project_likes_path(@project), method: :post %>
+      <%= pluralize(@project.likes.count, 'like') %>
     </div>
     <hr>
 
     <% if user_signed_in? %>
       <div >
-          <%= link_to 'Edit Project', edit_project_path(@project) %>
+        <%= link_to 'Edit Project', edit_project_path(@project) %>
       </div>
 
       <div class="">
-        <%= link_to 'Delete Project',
-        project_path(@project),
-        method: :delete,
-        data: {
-          confirm: 'Are you sure?'
-        }
-        %>
+        <%= link_to 'Delete Project', project_path(@project), method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+        <a href="/#portfolio"></a>
       </div>
 
       <div class="">
         <%= simple_form_for [@project, @image] do |f| %>
-          <%= f.input :avatar %>
-          <%= f.submit class: 'btn btn-primary' %>
+        <%= f.input :avatar %>
+        <%= f.submit 'Add image', class: 'btn btn-primary' %>
         <% end %>
       </div>
 
     <% end %>
-
   </div>
 </div>

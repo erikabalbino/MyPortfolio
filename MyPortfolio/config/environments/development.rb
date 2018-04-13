@@ -3,8 +3,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   # This tells ActionMailer to use letter opener to perform
   # mail delivery.
-  config.action_mailer.delivery_method = :letter_opener
-  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default charset: "utf-8"
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = {
     host: "localhost:3000"
