@@ -40,6 +40,7 @@ gem 'fog'
 gem 'simple_form'
 gem 'pry'
 gem "font-awesome-rails"
+gem "webpacker"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
