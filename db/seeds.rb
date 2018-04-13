@@ -20,19 +20,19 @@ PASSWORD = '123'
 #   # is_admin: true
 # )
 
-u = User.update(
-  # first_name: "Liz",
-  # last_name: "Balbino",
-  # profile_title: "Graphic Design Student",
-  # profile_company: "The Art Institute of Vancouver",
-  # address: "Burnaby, British Columbia, Canada",
-  # email: "mecbalbino@gmail.com",
-  password: PASSWORD
-  # focus: "Graphic Designer,Illustration,Digital Art",
-  # url_facebook: "http://facebook.com/mebalbino",
-  # url_linkedin: "http://linkedin.com/in/mebalbino",
-  # url_instagram: "http://instagram.com/mebalbino",
-  # image: "https://mir-s3-cdn-cf.behance.net/user/138/a6840c65646341.59346d236302e.jpg"
+u = User.create(
+  first_name: "Liz",
+  last_name: "Balbino",
+  profile_title: "Graphic Design Student",
+  profile_company: "The Art Institute of Vancouver",
+  address: "Burnaby, British Columbia, Canada",
+  email: "mecbalbino@gmail.com",
+  password: PASSWORD,
+  focus: "Graphic Designer,Illustration,Digital Art",
+  url_facebook: "http://facebook.com/mebalbino",
+  url_linkedin: "http://linkedin.com/in/mebalbino",
+  url_instagram: "http://instagram.com/mebalbino",
+  image: "https://mir-s3-cdn-cf.behance.net/user/138/a6840c65646341.59346d236302e.jpg"
 )
 # if u.valid?
 #   6.times.each do |i|
