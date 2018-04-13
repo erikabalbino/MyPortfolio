@@ -2,8 +2,12 @@
   "name": "MyPortfolio",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "^3.4.3",
     "popper.js": "^1.14.0",
     "startbootstrap-agency": "^4.0.0-beta",
     "startbootstrap-creative": "^4.0.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
   }
 }

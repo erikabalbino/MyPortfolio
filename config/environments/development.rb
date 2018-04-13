@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's package.json
+  config.webpacker.check_yarn_integrity = true
+
 
   config.action_mailer.raise_delivery_errors = true
   # This tells ActionMailer to use letter opener to perform
