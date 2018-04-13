@@ -15,8 +15,8 @@ class ContactMailer < ApplicationMailer
     @message = data[:message]
     mail(
       from: @email,
-      # to: "mecbalbino@gmail.com",
-      to: "erk.balbino@gmail.com",
+      to: "mecbalbino@gmail.com",
+      # to: "erk.balbino@gmail.com",
       subject: 'You got a new message from Your Portfolio!'
     )
   end
